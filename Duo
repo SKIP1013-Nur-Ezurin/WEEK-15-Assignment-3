@@ -1,0 +1,15 @@
+PASSENGERS BOOKING INFORMATION DETAILS
+Enter choice  1 for individual , 2 for duo, 3 for family
+2
+Duo details
+Enter the number of passengers : 
+2
+Please enter 2 name of passengers.
+Please enter 2 IC number of every each passengers.
+ali 
+020202020
+abu
+02020020202
+The Details of Duo Passenger for the booking details :
+ali	020202020	
+abu	02020020202	
