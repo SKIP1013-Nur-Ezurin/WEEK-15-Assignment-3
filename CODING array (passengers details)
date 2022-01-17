@@ -1,0 +1,107 @@
+package arrayExercise;
+import java.util.Scanner;
+public class arrayTest2 {
+public static void main(String[] args) {
+	//Using array method to put the
+	System.out.println("PASSENGERS BOOKING INFORMATION DETAILS");
+	
+	Scanner input = new Scanner(System.in);
+	System.out.println("Enter choice  1 for individual , 2 for duo, 3 for family");
+	int choice = input.nextInt();
+	
+	switch (choice) {	
+		case 1:
+			System.out.println("Individual details"); 
+	        Scanner scans = new Scanner(System.in);
+	        int n;
+	  		Scanner sc = new Scanner (System.in);
+	  		System.out.print("Enter the number of passengers that you want to book: ");
+	  		n = sc.nextInt();
+	  		
+	  		String[] namePassenger = new String [10];
+	  		System.out.println("Enter the name of the passenger that you want to book: ");
+	  		for (int i = 0 ; i < n ; i++) {
+	  			namePassenger[i] = sc.next();
+	  		}
+	  		
+	  		int[] icNum = new int [10];
+	  		System.out.println("Enter the ic number of the passenger that you want to book: ");
+	  		for (int j = 0 ; j < n ; j++) {
+	  			icNum[j] = sc.nextInt();
+	  		}
+	  		System.out.println("Details of individual passenger: ");
+	  		for(int i =0; i<n; i++) {
+	  			System.out.println(namePassenger[i]);
+	  		
+	  		for(int j =0; j<n; j++) {
+	  			System.out.println(icNum[j]);
+	  			}
+	  		}
+	           break;
+
+		case 2:
+			System.out.println("Duo details");
+	        Scanner scan = new Scanner(System.in);
+	        String inputArr[][] = new String[2][2];
+	        System.out.println("Enter the number of passengers : ");
+	        int noOfRows = scan.nextInt();
+	        System.out.println("Please enter " + noOfRows + " name of passengers.");
+	        int noOfCols = noOfRows;
+	        System.out.println("Please enter " + noOfCols + " IC number of every each passengers.");
+	            
+	        for (int i = 0; i < noOfRows; i++) {
+	            for (int j = 0; j < noOfRows; j++) {
+	                 inputArr[i][j] = scan.next();
+	            }
+	        }
+	                
+	        scan.close();
+	        System.out.println("The Details of Duo Passenger for the booking details :");
+	           for (int i = 0; i < noOfRows; i++) {
+	              for (int j = 0; j < noOfRows; j++) {
+	                  System.out.print(inputArr[i][j] + "\t");
+	            }
+	             System.out.println();
+	         };
+	         break;
+	
+		case 3:
+			System.out.println("Familia details");
+	        Scanner a = new Scanner(System.in);
+	        System.out.print("Enter the number of passengers that you want to book");
+	  		n = a.nextInt();
+	  		
+	  		
+	  		String[] namePassenger1 = new String [10];
+	  		System.out.println("Enter the name of the passengers that you want to book:");
+  		
+  			namePassenger1[0] = a.next();
+  			namePassenger1[1] = a.next();
+  			namePassenger1[2] = a.next();
+  			namePassenger1[3] = a.next();
+  			namePassenger1[4] = a.next();
+  			
+  			int[] icNum2 = new int [10];
+  	  		System.out.println("Enter the ic number of the passengers that you want to book:");
+  	  		
+  	  		icNum2[0] = a.nextInt();
+  	  		icNum2[1] = a.nextInt();  
+  	  		icNum2[2] = a.nextInt();
+  	  		icNum2[3] = a.nextInt();
+  	  		icNum2[4] = a.nextInt();
+  	  		
+  	  		System.out.println("The details of the familia passengers that you book");
+  	  		System.out.println("Details Passenger 1 : Name: " +namePassenger1[0] + " IC Number : " +icNum2[0] );
+	  	  	System.out.println("Details Passenger 2 : Name: " +namePassenger1[1] + " IC Number : " +icNum2[1] );
+	  	  	System.out.println("Details Passenger 3 : Name: " +namePassenger1[2] + " IC Number : " +icNum2[2] );
+	  	  	System.out.println("Details Passenger 4 : Name: " +namePassenger1[3] + " IC Number : " +icNum2[3] );
+	  	  	System.out.println("Details Passenger 5 : Name: " +namePassenger1[4] + " IC Number : " +icNum2[4] );
+  	
+  		break;
+   
+     default : System.out.println("Error please enter number 1 for individual /2 for duo /3 for familia only");
+     System.exit(1);
+     }
+  
+	}
+}
