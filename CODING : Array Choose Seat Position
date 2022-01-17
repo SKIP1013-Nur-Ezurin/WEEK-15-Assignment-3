@@ -1,0 +1,221 @@
+package selfProgramming;
+import java.io.*;
+import java.util.Scanner;
+//using passing array method to choose seat according seat number
+public class Array2 
+{	
+ 	public static void printRow(int[] row) 
+	{
+        for (int i : row) 
+		{
+            System.out.print(i);
+            System.out.print("\t");
+        }
+        System.out.println();      
+    }
+
+    public static void main(String[] args) throws Exception 
+	{ 
+    	 // throw Exception to declare exception that occur during execution of a program 
+    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));  
+     	// buffered reader is java class to read text from the input by read characters, in array 
+     	int seatIndividual[][]= new int[3][4];
+     	int seatDuo[][]= new int[4][7];
+     	int seatFamilia[][]= new int[5][11];
+        int i,j,k=1;
+        int ans;
+        boolean isExit = true;
+        boolean isError = true;
+   
+        System.out.println("PASSENGERS YOU MAY CHOOSE YOUR SEAT POSITION");
+        Scanner c = new Scanner(System.in);
+  		System.out.println("Enter choice  1 for individual , 2 for duo, 3 for family");
+  		int seat = c.nextInt();
+   		if(seat == 1) 
+		{			
+  			System.out.println("Choose your Individual seat number");
+  			System.out.println(" _________________________________________________INDIVIDUAL SEAT_________________________________________________");
+  			System.out.println("|                                  /*             PILOT'S COCKPIT                  */      WINGS - WINDOW         |");
+  			System.out.println("|                                  |*      F1       F2        F3       F4          *|                             |");
+  			System.out.println("|         WINGS - WINDOW           |*      F5       F6        F7       F8          *|      WINGS - WINDOW         |");
+  			System.out.println("|                                  |*      F9       F10       F11       F12        *|                             |");
+		    for( i = 0 ; i < 3 ; i++) 
+			{
+		        for(j = 0 ; j < 4 ; j++) 
+				{
+		            seatIndividual[i][j]=k;
+		            k++;
+		        }
+		    }
+		
+		    for(int[] row : seatIndividual) 
+			{
+		        printRow(row);
+		    }
+				//this loop repeats the reserving process (and printing seats) 12 times
+		    do 
+			{
+				System.out.println("Enter 0 to exit loop.");
+		        System.out.print("Enter a Seat number to reserve: ");
+		        ans = Integer.parseInt(br.readLine());
+		   	    k = 1;
+		        if(ans == 0)	
+				{
+		    	   	isExit = false;
+		          	break;
+				}
+		        for(i=0;i<3;i++) 
+				{
+		            for(j=0;j<4;j++) 
+					{
+		                if (k == ans) 
+						{
+		                    //here we check if the seat has already been reserved
+		                    if (seatIndividual[i][j]== 0) {
+		                        System.out.println("That seat has already been reserved");
+		                    }
+		                	//if its not reserved then reserve it
+		                    else 
+							{
+		                         seatIndividual[i][j]= 0;
+		                    }
+		                }
+		                k++;
+		            }
+		        }
+		           //print updated array of seats
+		        for(int[] row : seatIndividual) 
+				{
+		       	    printRow(row);
+		        }
+		    }while(isExit);	isError = true;
+   		}
+   		
+		else if (seat == 2) 
+		{
+		    System.out.println("Choose your duo seat number");
+	  		System.out.println(" ________________________________________________________DUO SEAT_________________________________________________");
+	  		System.out.println("|__________________________________|* B1    B2       B3  B4   B5      B6  B7       *|_____________________________|");
+	  		System.out.println("|__________________________________|* B8    B9       B10  B11   B12      B13  B14  *|_____________________________|");
+	  		System.out.println("|__________________________________|* B15   B16      B17  B18   B19      B20  B21  *|_____________________________|");
+	  		System.out.println("|__________________________________|* B22   B23      B24  B25   B26      B27  B28  *|_____________________________|");
+		  	for( i = 0 ; i < 4 ; i++) 
+			{
+		        for(j = 0 ; j < 7 ; j++) 
+				{
+		            seatDuo[i][j]=k;
+		            k++;
+		        }
+		    }
+			
+		    for(int[] row : seatDuo) 
+			{
+		        printRow(row);
+		    }
+			//this loop repeats the reserving process (and printing seats) 12 times
+		    do
+			{
+				System.out.println("Enter 0 to exit loop.");						
+		        System.out.print("Enter a Seat number to reserve: ");
+		        ans = Integer.parseInt(br.readLine());
+	           	k = 1;
+			    if(ans == 0)	
+				{
+			       	isExit = false;
+			       	break;
+				}
+		        for(i=0;i<4;i++) 
+				{
+			        for(j=0;j<7;j++) 
+					{
+			            if (k == ans) 
+						{
+			              	 //here we check if the seat has already been reserved
+			           	    if (seatDuo[i][j]== 0) 
+							{
+			                    System.out.println("That seat has already been reserved");
+			            	}
+			                //if its not reserved then reserve it
+			                else  
+							{
+			                   seatDuo[i][j]= 0;
+			            	}
+			            }
+			            k++;
+			        }
+			    }
+			    //print updated array of seats
+			    for(int[] row : seatDuo) 
+				{
+			        printRow(row);
+			    }
+			}while(isExit);	isExit = true;
+		} 
+		else if ( seat == 3 ) 
+		{
+		    System.out.println("Choose Familia Seat Number");
+		  	System.out.println(" _____________________________________________________FAMILIA SEAT_________________________________________________");
+		  	System.out.println("|__________________________________|* E1 E2 E3       E4 E5 E6 E7 E8     E9 E10 E11 *|_____________________________|");
+			System.out.println("|__________________________________|* E12 E13 E14  E15 E16 E17 E18 E19  E20 E21 E22*|_____________________________|");
+			System.out.println("|__________________________________|* E23 E24 E25  E26 E27 E28 E29 E30  E31 E32 E33*|_____________________________|");
+			System.out.println("|__________________________________|* E34 E35 E36  E37 E38 E39 E40 E41  E42 E43 E44*|_____________________________|");
+			System.out.println("|__________________________________|* E45 E46 E47  E48 E49 E50 E51 E52  E53 E54 E55*|_____________________________|");
+			System.out.println("|         WINGS - WINDOW           /*                WALK IN DOOR                  */      WINGS - WINDOW         |");
+		   	for( i = 0 ; i < 5 ; i++) 
+			{
+				for(j = 0 ; j < 11 ; j++) 
+				{
+			        seatFamilia[i][j]=k;
+			        k++;
+			    }
+			}
+			for(int[] row : seatFamilia) 
+			{
+			    printRow(row);
+			}
+			//this loop repeats the reserving process (and printing seats) 12 times
+			do
+			{
+				System.out.println("Enter 0 to exit loop.");
+			    System.out.print("Enter a Seat number to reserve: ");
+			    ans = Integer.parseInt(br.readLine());
+			    k = 1;
+			    if(ans == 0)	
+				{
+			       	isExit = false;
+			       	break;
+				}
+			    for(i=0;i<5;i++) 
+				{
+			        for(j=0;j<11;j++) 
+					{
+			            if (k == ans) 
+						{
+			                //here we check if the seat has already been reserved
+			                if (seatFamilia[i][j]== 0)
+							{
+			                    System.out.println("That seat has already been reserved");
+			                }
+			                //if its not reserved then reserve it
+			                else 
+							{
+			                    seatFamilia[i][j]= 0;
+			                }
+			            }
+			            k++;
+			        }
+			    }
+			    //print updated array of seats
+			    for(int[] row : seatFamilia) 
+				{
+			        printRow(row);
+			    }
+			}while(isError);	isError = true;      
+		}
+		else 
+		{
+		    System.out.println("Wrong. Please entered the correct input");
+		}
+    } 	
+}
+    
