@@ -1,0 +1,23 @@
+PASSENGERS BOOKING INFORMATION DETAILS
+Enter choice  1 for individual , 2 for duo, 3 for family
+3
+Familia details
+Enter the number of passengers that you want to book5
+Enter the name of the passengers that you want to book:
+ahmad
+ali
+jus
+kamal
+hasan
+Enter the ic number of the passengers that you want to book:
+020303-30-1230
+123456-02-1234
+123455-23-7892
+123444-90-3333
+123451-02-3456
+The details of the familia passengers that you book
+Details Passenger 1 : Name: ahmad IC Number : 020303-30-1230
+Details Passenger 2 : Name: ali IC Number : 123456-02-1234
+Details Passenger 3 : Name: jus IC Number : 123455-23-7892
+Details Passenger 4 : Name: kamal IC Number : 123444-90-3333
+Details Passenger 5 : Name: hasan IC Number : 123451-02-3456
