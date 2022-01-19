@@ -1,171 +1,14 @@
 package assignment3;
 import java.io.*;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class FlightTicketSystemMethod {
-	private static final int DISPLAYPACKAGE = 0, DISPLAYINDSEAT = 1, DISPLAYDUOSEAT = 2;
-	
-	//passing array method
-	public static void printRow(int[] row) {
-        for (int i : row) {
-           System.out.print(i);
-           System.out.print("\t");
-       }
-       System.out.println();
-    }
-	
-	//Display user flight payment details
-	public static void DisplayFlightDetails(int orderNumber, double totalPrice, double finalPrice, double savePrice, int indSeatTaken, int duoSeatTaken, int famSeatTaken) {
-			System.out.println("\n                                   GERAK AIRWAYS                                ");
-			System.out.println("                                 FLIGHT PAYMENT DETAILS                           ");
-			System.out.println("No of Order:" +orderNumber);
-			System.out.println("\nName: " +name);
-			System.out.println("Destination: " +destination);
-			System.out.println("Departure Date: " +departureDate);
-			System.out.println("Departure Time: " +departureTime);
-			System.out.println("Total individual package: " +totalIndividualPack);
-			System.out.println("Total duo package: " +totalDuoPack);
-			System.out.println("Total familia package: " +totalFamiliaPack);		
-			System.out.printf("Total price BEFORE discount: RM%.2f" ,totalPrice);
-			System.out.println("");
-			System.out.printf("Total price AFTER discount: RM%.2f" ,finalPrice);
-			System.out.println("");
-			System.out.println("Your total Individual Class seat has been made: " +indSeatTaken +" seats ");
-			System.out.println("Your total Duo Class Seat has been made " +duoSeatTaken + " seats");
-			System.out.println("Your total Familu Class Seat has been made " +famSeatTaken + " seats");		
-			System.out.printf("CONGRATULATIONS!! YOU GET TO SAVE YOUR TICKET FLIGHT FOR DECEMBER PROMOTION WITH RM%.2f" ,savePrice);
-			System.out.println("");
-			System.out.println("Your reservation for ticket seat is successfully");
-			System.out.println("");
-			System.out.println("");
-			System.out.println("\n*********************************************************************************");
-			System.out.println("\n                   YOUR PURCHASE HAVE BEEN SUCCESSFULLY BOOOKED                 ");
-			System.out.println("\n                      THANK YOU FOR BOOKING WITH GERAK AIRWAYS                  ");
-			System.out.println("\n                         Travel Together, Get Better Deals                      ");
-			System.out.println("\n*********************************************************************************");
-			System.out.println("_____________________________________________________________________________________");
-	}
-	
-	//Display seat package
-	public static void DisplayMessage(float arg1, float arg2 ,float arg3,float arg4, float arg5,float arg6,int Switch)
-	{
-		final int DISPLAYPACKAGE = 0;
-		final int DISPPLAYINDSEAT = 1;
-		final int DISPLAYDUOSEAT =2;
-		switch(Switch) {
-		
-			case DISPLAYPACKAGE :
-				//Display package deals during the holiday promotion deals
-				//Display original price and after promotion price
-				System.out.println("\n                                 WELCOME TO GERAK AIRWAYS                       ");
-				System.out.println("                              HOLIDAY DECEMBER PROMO DEALS                      ");
-				System.out.println("                            Travel Together, Get Better Deals                   ");
-				System.out.print(" ");
-				System.out.println("_______________________________________________________________________________________" );
-				System.out.println("|    INDIVIDUAL PACKAGE     |         DUO PACKAGE       |        FAMILIA PACKAGE       |");
-				System.out.println("|___________________________|___________________________|______________________________|");
-				System.out.printf("|BEFORE PROMO PRICE:RM%.2f" ,arg1);
-				System.out.printf("|BEFORE PROMO PRICE:RM%.2f" ,arg2);
-				System.out.printf("|BEFORE PROMO PRICE:RM%.2f" ,arg3);
-				System.out.print("  |");
-				System.out.println("");
-				System.out.printf("|AFTER PROMO PRICE:RM %.2f", arg4);
-				System.out.printf("|AFTER PROMO PRICE :RM%.2f",arg5);
-				System.out.printf("|AFTER PROMO PRICE:RM%.2f " ,arg6);
-				System.out.print("  |");
-				System.out.println("");
-				System.out.println("|      (ONE WAY PER PERSON) |     (ONE WAY TWO PERSON)  |    (ONE WAY FIVE PERSON)     |");
-				System.out.println("|      -No food included    |    -Not food included     |    - Included food           |");
-				System.out.println("|      -No 7kgs baggage     |    -7kgs baggage included |    - 7kgs baggage included   |");
-				System.out.println("|                           |                           |                              |" );
-				System.out.println("|    EXTRA 5% DISCOUNT      |    EXTRA 15% DISCOUNT     |       EXTRA 25% DISCOUNT     |");
-				System.out.println("|___________________________|___________________________|______________________________|" );
-				
-				//Display seat class arrangement
-				System.out.println("\n\n                                            GERAK AIRWAYS                                                ");
-				System.out.println("                                         PLEASE CHOOSE YOUR SEAT CLASS ARRANGEMENT                           ");
-				System.out.println("                                       NO ANY EXTRA CHARGES FOR THE FLIGHT CLASS SEAT                        ");
-				System.out.println("                             EVERY CLASS WILL GET SAME SERVICES AND COMFORTABLE ACCOMODATION                 ");
-				System.out.println("__________________________________________________________________________________________________________________");
-				System.out.println("|    INDIVIDUAL PACKAGE SEAT = F        |       DUO PACKAGE SEAT = B           |        FAMILIA PACKAGE SEAT = E  |");
-				System.out.println("|          no food included             |       7kgs baggage included          |      included food + 7kgs baggage|");
-				System.out.println("|   getting your own privacy            |  special seat with your partner      |     close for family and friends |");
-				System.out.println("|_______________________________________|______________________________________|__________________________________|");
-				System.out.println("|_____________________________________________SEAT CLASS ARRANGEMENT______________________________________________|");
-				System.out.println("|                                  /*             PILOT'S COCKPIT                  */      WINGS - WINDOW         |");
-				System.out.println("|                                  |*      F1       F2        F3       F4          *|                             |");
-				System.out.println("|         WINGS - WINDOW           |*      F5       F6        F7       F8          *|      WINGS - WINDOW         |");
-				System.out.println("|                                  |*      F9       F10       F11       F12        *|                             |");
-				System.out.println("|__________________________________|* B1    B2       B3  B4   B5      B6  B7       *|_____________________________|");
-				System.out.println("|__________________________________|* B8    B9       B10  B11   B12      B13  B14  *|_____________________________|");
-				System.out.println("|__________________________________|* B15   B16      B17  B18   B19      B20  B21  *|_____________________________|");
-				System.out.println("|__________________________________|* B22   B23      B24  B25   B26      B27  B28  *|_____________________________|");
-				System.out.println("|__________________________________|* E1 E2 E3       E4 E5 E6 E7 E8     E9 E10 E11 *|_____________________________|");
-				System.out.println("|__________________________________|* E12 E13 E14  E15 E16 E17 E18 E19  E20 E21 E22*|_____________________________|");
-				System.out.println("|__________________________________|* E23 E24 E25  E26 E27 E28 E29 E30  E31 E32 E33*|_____________________________|");
-				System.out.println("|__________________________________|* E34 E35 E36  E37 E38 E39 E40 E41  E42 E43 E44*|_____________________________|");
-				System.out.println("|__________________________________|* E45 E46 E47  E48 E49 E50 E51 E52  E53 E54 E55*|_____________________________|");
-				System.out.println("|         WINGS - WINDOW           /*                WALK IN DOOR                  */      WINGS - WINDOW         |");
-				System.out.println("|__________________________________|________________________________________________|_____________________________|");
-				
-				
-				//User input the information using Scanner
-				System.out.println("\n\n                                   GERAK AIRWAYS                               ");
-				System.out.println("                             FLIGHT PRICE TICKET SYSTEM                            ");
-				System.out.println("                            HOLIDAY DECEMBER PROMO DEALS                           ");
-				System.out.println("                         Travel Together, Get Better Deals                         ");						
-			break;
-			case DISPPLAYINDSEAT :
-	  			System.out.println("Choose your Individual seat number");
-	  			System.out.println(" _________________________________________________INDIVIDUAL SEAT_________________________________________________");
-	  			System.out.println("|                                  /*             PILOT'S COCKPIT                  */      WINGS - WINDOW         |");
-	  			System.out.println("|                                  |*      F1       F2        F3       F4          *|                             |");
-	  			System.out.println("|         WINGS - WINDOW           |*      F5       F6        F7       F8          *|      WINGS - WINDOW         |");
-	  			System.out.println("|                                  |*      F9       F10       F11       F12        *|                             |");				
-			break;
-			case DISPLAYDUOSEAT :
-			    System.out.println("Choose your duo seat number");
-		  		System.out.println(" ________________________________________________________DUO SEAT_________________________________________________");
-		  		System.out.println("|__________________________________|* B1    B2       B3  B4   B5      B6  B7       *|_____________________________|");
-		  		System.out.println("|__________________________________|* B8    B9       B10  B11   B12      B13  B14  *|_____________________________|");
-		  		System.out.println("|__________________________________|* B15   B16      B17  B18   B19      B20  B21  *|_____________________________|");
-		  		System.out.println("|__________________________________|* B22   B23      B24  B25   B26      B27  B28  *|_____________________________|");			
-			break;
-		}
-	
-	}
-	
+	private static final int DISPLAYPACKAGE = 0, DISPLAYINDSEAT = 1, DISPLAYDUOSEAT = 2, DISPLAYFAMSEAT = 3;
 	//Declare (as global) variable and its value
 	public static String name,destination,departureDate,departureTime;
 	public static int totalIndividualPack, totalDuoPack, totalFamiliaPack;
-	public static void InputData()
-	{
-		Scanner input = new Scanner(System.in);
-		System.out.println("");
-		System.out.print("Please insert name: ");
-		name=input.nextLine();
-		
-		System.out.print("Please insert destination: ");
-		destination=input.nextLine();
-		
-		System.out.print("Please insert departure date: ");
-		departureDate=input.nextLine();
-		
-		System.out.print("Please insert departure time: ");
-		departureTime=input.nextLine();
-		
-		System.out.print("Please insert the number of individual package to book: ");
-		totalIndividualPack=input.nextInt();
-		
-		System.out.print("Please insert the number of duo package to book: ");
-		totalDuoPack=input.nextInt();
-		
-		System.out.print("Please insert the number of familia package to book: ");
-		totalFamiliaPack=input.nextInt();		
-	}
 	
+	//Main Method
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		
@@ -361,7 +204,8 @@ public class FlightTicketSystemMethod {
       		System.out.println("Enter choice  1 for individual , 2 for duo, 3 for family");
       		int choice = b.nextInt();
       		
-      		switch (choice) {	
+      		switch (choice) {
+      			//Key in individual seat passengers details
       			case 1:
       				System.out.println("Individual details"); 
       		        Scanner scans = new Scanner(System.in);
@@ -390,11 +234,12 @@ public class FlightTicketSystemMethod {
       		  			}
       		  		}
       		           break;
-
+      		    
+      		    //key in duo seat passengers details
       			case 2:
       				System.out.println("Duo details");
       		        Scanner scan = new Scanner(System.in);
-      		        String inputArr[][] = new String[2][2];
+      		        String inputDuo[][] = new String[2][2];
       		        System.out.println("Enter the number of passengers : ");
       		        int noOfRows = scan.nextInt();
       		        System.out.println("Please enter " + noOfRows + " name of passengers.");
@@ -403,7 +248,7 @@ public class FlightTicketSystemMethod {
       		            
       		        for (int i = 0; i < noOfRows; i++) {
       		            for (int j = 0; j < noOfRows; j++) {
-      		                 inputArr[i][j] = scan.next();
+      		                 inputDuo[i][j] = scan.next();
       		            }
       		        }
       		                
@@ -411,12 +256,13 @@ public class FlightTicketSystemMethod {
       		        System.out.println("The Details of Duo Passenger for the booking details :");
       		           for (int i = 0; i < noOfRows; i++) {
       		              for (int j = 0; j < noOfRows; j++) {
-      		                  System.out.print(inputArr[i][j] + "\t");
+      		                  System.out.print(inputDuo[i][j] + "\t");
       		            }
       		             System.out.println();
       		         };
-      		         break;
+      		    break;
       		
+      		    //key in familia passengers details
       			case 3:
       				System.out.println("Familia details");
       		        Scanner a = new Scanner(System.in);
@@ -466,11 +312,13 @@ public class FlightTicketSystemMethod {
         int ans;
         boolean isExit = true;
         boolean isError = true;
-   
+        
+        //Choose position seat number using array
         System.out.println("PASSENGERS YOU MAY CHOOSE YOUR SEAT POSITION");
         Scanner c = new Scanner(System.in);
   		System.out.println("Enter choice  1 for individual , 2 for duo, 3 for family");
   		int seat = c.nextInt();
+  		//choosing seat number in individual package
    		if(seat == 1) 
 		{			
 			DisplayMessage(0,0 ,0,0,0,0,DISPLAYINDSEAT);
@@ -526,6 +374,7 @@ public class FlightTicketSystemMethod {
 		    }while(isExit);	isError = true;
    		}
    		
+   		//choosing duo seat numbers 
 		else if (seat == 2) 
 		{
 			DisplayMessage(0,0 ,0,0,0,0,DISPLAYDUOSEAT);
@@ -581,16 +430,12 @@ public class FlightTicketSystemMethod {
 			    }
 			}while(isExit);	isExit = true;
 		} 
-		else if ( seat == 3 ) 
+   		
+   		//choosing familia seat numbers
+		else if ( seat == 3)
 		{
+			DisplayMessage(0,0 ,0,0,0,0,DISPLAYFAMSEAT);
 		    System.out.println("Choose Familia Seat Number");
-		  	System.out.println(" _____________________________________________________FAMILIA SEAT_________________________________________________");
-		  	System.out.println("|__________________________________|* E1 E2 E3       E4 E5 E6 E7 E8     E9 E10 E11 *|_____________________________|");
-			System.out.println("|__________________________________|* E12 E13 E14  E15 E16 E17 E18 E19  E20 E21 E22*|_____________________________|");
-			System.out.println("|__________________________________|* E23 E24 E25  E26 E27 E28 E29 E30  E31 E32 E33*|_____________________________|");
-			System.out.println("|__________________________________|* E34 E35 E36  E37 E38 E39 E40 E41  E42 E43 E44*|_____________________________|");
-			System.out.println("|__________________________________|* E45 E46 E47  E48 E49 E50 E51 E52  E53 E54 E55*|_____________________________|");
-			System.out.println("|         WINGS - WINDOW           /*                WALK IN DOOR                  */      WINGS - WINDOW         |");
 		   	for( i = 0 ; i < 5 ; i++) 
 			{
 				for(j = 0 ; j < 11 ; j++) 
@@ -647,7 +492,174 @@ public class FlightTicketSystemMethod {
 		    System.out.println("Wrong. Please entered the correct input");
 		}
    		
+   		//calling Display flight details method
    		DisplayFlightDetails( orderNumber,totalPrice,finalPrice, savePrice,  indSeatTaken, duoSeatTaken, famSeatTaken);		
    		
 	}
+	//printRowMethod to pass array in the main method to loop display seat
+	public static void printRow(int[] row) {
+        for (int i : row) {
+           System.out.print(i);
+           System.out.print("\t");
+       }
+       System.out.println();
+    }
+	
+	//Method display flight details - Display user flight payment details
+	public static void DisplayFlightDetails(int orderNumber, double totalPrice, double finalPrice, double savePrice, int indSeatTaken, int duoSeatTaken, int famSeatTaken) {
+			System.out.println("\n                                   GERAK AIRWAYS                                ");
+			System.out.println("                                 FLIGHT PAYMENT DETAILS                           ");
+			System.out.println("No of Order:" +orderNumber);
+			System.out.println("\nName: " +name);
+			System.out.println("Destination: " +destination);
+			System.out.println("Departure Date: " +departureDate);
+			System.out.println("Departure Time: " +departureTime);
+			System.out.println("Total individual package: " +totalIndividualPack);
+			System.out.println("Total duo package: " +totalDuoPack);
+			System.out.println("Total familia package: " +totalFamiliaPack);		
+			System.out.printf("Total price BEFORE discount: RM%.2f" ,totalPrice);
+			System.out.println("");
+			System.out.printf("Total price AFTER discount: RM%.2f" ,finalPrice);
+			System.out.println("");
+			System.out.println("Your total Individual Class seat has been made: " +indSeatTaken +" seats ");
+			System.out.println("Your total Duo Class Seat has been made " +duoSeatTaken + " seats");
+			System.out.println("Your total Familu Class Seat has been made " +famSeatTaken + " seats");		
+			System.out.printf("CONGRATULATIONS!! YOU GET TO SAVE YOUR TICKET FLIGHT FOR DECEMBER PROMOTION WITH RM%.2f" ,savePrice);
+			System.out.println("");
+			System.out.println("Your reservation for ticket seat is successfully");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("\n*********************************************************************************");
+			System.out.println("\n                   YOUR PURCHASE HAVE BEEN SUCCESSFULLY BOOOKED                 ");
+			System.out.println("\n                      THANK YOU FOR BOOKING WITH GERAK AIRWAYS                  ");
+			System.out.println("\n                         Travel Together, Get Better Deals                      ");
+			System.out.println("\n*********************************************************************************");
+			System.out.println("_____________________________________________________________________________________");
+	}
+	
+	//Display Message method to display the package price, seat position
+	public static void DisplayMessage(float arg1, float arg2 ,float arg3,float arg4, float arg5,float arg6,int Switch)
+	{
+		final int DISPLAYPACKAGE = 0;
+		final int DISPPLAYINDSEAT = 1;
+		final int DISPLAYDUOSEAT =2;
+		switch(Switch) {
+		
+			case DISPLAYPACKAGE :
+				//Display package deals during the holiday promotion deals
+				//Display original price and after promotion price
+				System.out.println("\n                                 WELCOME TO GERAK AIRWAYS                       ");
+				System.out.println("                              HOLIDAY DECEMBER PROMO DEALS                      ");
+				System.out.println("                            Travel Together, Get Better Deals                   ");
+				System.out.print(" ");
+				System.out.println("_______________________________________________________________________________________" );
+				System.out.println("|    INDIVIDUAL PACKAGE     |         DUO PACKAGE       |        FAMILIA PACKAGE       |");
+				System.out.println("|___________________________|___________________________|______________________________|");
+				System.out.printf("|BEFORE PROMO PRICE:RM%.2f" ,arg1);
+				System.out.printf("|BEFORE PROMO PRICE:RM%.2f" ,arg2);
+				System.out.printf("|BEFORE PROMO PRICE:RM%.2f" ,arg3);
+				System.out.print("  |");
+				System.out.println("");
+				System.out.printf("|AFTER PROMO PRICE:RM %.2f", arg4);
+				System.out.printf("|AFTER PROMO PRICE :RM%.2f",arg5);
+				System.out.printf("|AFTER PROMO PRICE:RM%.2f " ,arg6);
+				System.out.print("  |");
+				System.out.println("");
+				System.out.println("|      (ONE WAY PER PERSON) |     (ONE WAY TWO PERSON)  |    (ONE WAY FIVE PERSON)     |");
+				System.out.println("|      -No food included    |    -Not food included     |    - Included food           |");
+				System.out.println("|      -No 7kgs baggage     |    -7kgs baggage included |    - 7kgs baggage included   |");
+				System.out.println("|                           |                           |                              |" );
+				System.out.println("|    EXTRA 5% DISCOUNT      |    EXTRA 15% DISCOUNT     |       EXTRA 25% DISCOUNT     |");
+				System.out.println("|___________________________|___________________________|______________________________|" );
+				
+				//Display seat class arrangement
+				System.out.println("\n\n                                            GERAK AIRWAYS                                                ");
+				System.out.println("                                         PLEASE CHOOSE YOUR SEAT CLASS ARRANGEMENT                           ");
+				System.out.println("                                       NO ANY EXTRA CHARGES FOR THE FLIGHT CLASS SEAT                        ");
+				System.out.println("                             EVERY CLASS WILL GET SAME SERVICES AND COMFORTABLE ACCOMODATION                 ");
+				System.out.println("__________________________________________________________________________________________________________________");
+				System.out.println("|    INDIVIDUAL PACKAGE SEAT = F        |       DUO PACKAGE SEAT = B           |        FAMILIA PACKAGE SEAT = E  |");
+				System.out.println("|          no food included             |       7kgs baggage included          |      included food + 7kgs baggage|");
+				System.out.println("|   getting your own privacy            |  special seat with your partner      |     close for family and friends |");
+				System.out.println("|_______________________________________|______________________________________|__________________________________|");
+				System.out.println("|_____________________________________________SEAT CLASS ARRANGEMENT______________________________________________|");
+				System.out.println("|                                  /*             PILOT'S COCKPIT                  */      WINGS - WINDOW         |");
+				System.out.println("|                                  |*      F1       F2        F3       F4          *|                             |");
+				System.out.println("|         WINGS - WINDOW           |*      F5       F6        F7       F8          *|      WINGS - WINDOW         |");
+				System.out.println("|                                  |*      F9       F10       F11       F12        *|                             |");
+				System.out.println("|__________________________________|* B1    B2       B3  B4   B5      B6  B7       *|_____________________________|");
+				System.out.println("|__________________________________|* B8    B9       B10  B11   B12      B13  B14  *|_____________________________|");
+				System.out.println("|__________________________________|* B15   B16      B17  B18   B19      B20  B21  *|_____________________________|");
+				System.out.println("|__________________________________|* B22   B23      B24  B25   B26      B27  B28  *|_____________________________|");
+				System.out.println("|__________________________________|* E1 E2 E3       E4 E5 E6 E7 E8     E9 E10 E11 *|_____________________________|");
+				System.out.println("|__________________________________|* E12 E13 E14  E15 E16 E17 E18 E19  E20 E21 E22*|_____________________________|");
+				System.out.println("|__________________________________|* E23 E24 E25  E26 E27 E28 E29 E30  E31 E32 E33*|_____________________________|");
+				System.out.println("|__________________________________|* E34 E35 E36  E37 E38 E39 E40 E41  E42 E43 E44*|_____________________________|");
+				System.out.println("|__________________________________|* E45 E46 E47  E48 E49 E50 E51 E52  E53 E54 E55*|_____________________________|");
+				System.out.println("|         WINGS - WINDOW           /*                WALK IN DOOR                  */      WINGS - WINDOW         |");
+				System.out.println("|__________________________________|________________________________________________|_____________________________|");
+				
+				
+				//User input the information using Scanner
+				System.out.println("\n\n                                   GERAK AIRWAYS                               ");
+				System.out.println("                             FLIGHT PRICE TICKET SYSTEM                            ");
+				System.out.println("                            HOLIDAY DECEMBER PROMO DEALS                           ");
+				System.out.println("                         Travel Together, Get Better Deals                         ");						
+			break;
+			case DISPPLAYINDSEAT :
+	  			System.out.println("Choose your Individual seat number");
+	  			System.out.println(" _________________________________________________INDIVIDUAL SEAT_________________________________________________");
+	  			System.out.println("|                                  /*             PILOT'S COCKPIT                  */      WINGS - WINDOW         |");
+	  			System.out.println("|                                  |*      F1       F2        F3       F4          *|                             |");
+	  			System.out.println("|         WINGS - WINDOW           |*      F5       F6        F7       F8          *|      WINGS - WINDOW         |");
+	  			System.out.println("|                                  |*      F9       F10       F11       F12        *|                             |");				
+			break;
+			case DISPLAYDUOSEAT :
+			    System.out.println("Choose your duo seat number");
+		  		System.out.println(" ________________________________________________________DUO SEAT_________________________________________________");
+		  		System.out.println("|__________________________________|* B1    B2       B3  B4   B5      B6  B7       *|_____________________________|");
+		  		System.out.println("|__________________________________|* B8    B9       B10  B11   B12      B13  B14  *|_____________________________|");
+		  		System.out.println("|__________________________________|* B15   B16      B17  B18   B19      B20  B21  *|_____________________________|");
+		  		System.out.println("|__________________________________|* B22   B23      B24  B25   B26      B27  B28  *|_____________________________|");			
+			break;
+			case DISPLAYFAMSEAT:
+				System.out.println(" _____________________________________________________FAMILIA SEAT_________________________________________________");
+			  	System.out.println("|__________________________________|* E1 E2 E3       E4 E5 E6 E7 E8     E9 E10 E11 *|_____________________________|");
+				System.out.println("|__________________________________|* E12 E13 E14  E15 E16 E17 E18 E19  E20 E21 E22*|_____________________________|");
+				System.out.println("|__________________________________|* E23 E24 E25  E26 E27 E28 E29 E30  E31 E32 E33*|_____________________________|");
+				System.out.println("|__________________________________|* E34 E35 E36  E37 E38 E39 E40 E41  E42 E43 E44*|_____________________________|");
+				System.out.println("|__________________________________|* E45 E46 E47  E48 E49 E50 E51 E52  E53 E54 E55*|_____________________________|");
+				System.out.println("|         WINGS - WINDOW           /*                WALK IN DOOR                  */      WINGS - WINDOW         |");	
+		}
+	
+	}
+	
+	
+	public static void InputData()
+	{
+		Scanner input = new Scanner(System.in);
+		System.out.println("");
+		System.out.print("Please insert name: ");
+		name=input.nextLine();
+		
+		System.out.print("Please insert destination: ");
+		destination=input.nextLine();
+		
+		System.out.print("Please insert departure date: ");
+		departureDate=input.nextLine();
+		
+		System.out.print("Please insert departure time: ");
+		departureTime=input.nextLine();
+		
+		System.out.print("Please insert the number of individual package to book: ");
+		totalIndividualPack=input.nextInt();
+		
+		System.out.print("Please insert the number of duo package to book: ");
+		totalDuoPack=input.nextInt();
+		
+		System.out.print("Please insert the number of familia package to book: ");
+		totalFamiliaPack=input.nextInt();		
+	}
+	
+	
 }
